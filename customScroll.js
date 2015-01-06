@@ -700,7 +700,7 @@
 			this.resetPosition(300);
 		},
 
-		finishInfihiteScroll: function () {
+		finishInfiniteScroll: function () {
 			this.infiniteWorking = false;
 			this.resetPosition(300);
 		},
@@ -1096,12 +1096,12 @@ angular.module('custom-scroll', [])
 						iElement.addClass('loading');
 						labelElement.innerHTML = ' Loading...';
 						$scope.$eval(iAttrs['onInfinite']).then(function () {
-							$scope.$parent.scroll.finishInfihiteScroll();
+							$scope.$parent.scroll.finishInfiniteScroll();
 							iElement.removeClass('loading');
 							labelElement.innerHTML = '';
 						}, function (reason) {
 							$log.info(reason);
-							$scope.$parent.scroll.finishInfihiteScroll();
+							$scope.$parent.scroll.finishInfiniteScroll();
 							iElement.removeClass('loading');
 							labelElement.innerHTML = '';
 						});
